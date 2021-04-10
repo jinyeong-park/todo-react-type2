@@ -6,8 +6,14 @@ function App() {
   return (
     <div className="App">
       {/* separate two sections */}
-      <div className='header'></div>
-      <div className="todolist"></div>
+      <div className='header'>
+        <input type='text' placeholder='Task..'></input>
+        <input type='text' placeholder='0'></input>
+        <button>Add Task</button>
+      </div>
+      <div className="todolist">
+
+      </div>
     </div>
   );
 }
