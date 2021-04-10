@@ -7,8 +7,10 @@ function App() {
     <div className="App">
       {/* separate two sections */}
       <div className='header'>
-        <input type='text' placeholder='Task..'></input>
-        <input type='number' placeholder='Deadline (in Days)...'></input>
+        <div className='header-left'>
+          <input type='number' placeholder='Deadline (in Days)...'></input>
+          <input type='text' placeholder='Task..'></input>
+        </div>
         <button>Add Task</button>
       </div>
       <div className="todolist">

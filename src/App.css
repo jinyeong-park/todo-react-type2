@@ -5,3 +5,8 @@
 .header {
   background-color: tomato;
 }
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
