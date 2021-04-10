@@ -8,7 +8,7 @@ function App() {
       {/* separate two sections */}
       <div className='header'>
         <input type='text' placeholder='Task..'></input>
-        <input type='text' placeholder='0'></input>
+        <input type='number' placeholder='Deadline (in Days)...'></input>
         <button>Add Task</button>
       </div>
       <div className="todolist">
