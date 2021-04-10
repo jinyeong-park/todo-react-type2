@@ -5,7 +5,9 @@ import '../App.css';
 function App() {
   return (
     <div className="App">
-      Hello app
+      {/* separate two sections */}
+      <div className='header'></div>
+      <div className="todolist"></div>
     </div>
   );
 }
