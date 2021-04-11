@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import '../App.css';
 
 function App() {
   // create useState to save task
-  const [tast, setTask] = useState<string>("")
+  const [task, setTask] = useState<string>("");
+  const [deadline, setDeadline] = useState<number>(0);
+
+  const onChangeHandlerTask = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // console.log('typed', e.target.value)
+    setTask(e.target.value)
+  }
+
+  const onChangeHandlerDeadline = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // console.log('typed', e.target.value)
+    setDeadline(e.target.value)
+  }
 
   return (
     <div className="App">
       {/* separate two sections */}
       <div className='header'>
         <div className='inputContainer'>
-          <input type='text' placeholder='Task..'></input>
-          <input type='number' placeholder='Deadline (in Days)...'></input>
+          <input type='text' value={task} onChange={onChangeHandlerTask} placeholder='Task..'></input>
+          <input type='number' value={deadline} onChange={onChangeHandlerDeadline} placeholder='Deadline (in Days)...'></input>
         </div>
         <button className='button'>Add Task</button>
       </div>
