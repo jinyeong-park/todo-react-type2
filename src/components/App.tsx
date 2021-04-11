@@ -7,15 +7,13 @@ function App() {
     <div className="App">
       {/* separate two sections */}
       <div className='header'>
-        <div className='header-left'>
+        <div className='inputContainer'>
           <input type='number' placeholder='Deadline (in Days)...'></input>
           <input type='text' placeholder='Task..'></input>
         </div>
-        <button>Add Task</button>
+        <button className='button'>Add Task</button>
       </div>
-      <div className="todolist">
-
-      </div>
+      <div className="todolist"></div>
     </div>
   );
 }
