@@ -36,7 +36,7 @@ const App: FC = () => {
   const deleteTask = (taskNameToDelete: string): void => {
     // filter the todolist and if the name is not the same as todelete, put it in the array
     setTodoList(todoList.filter((task) => {
-      return task.taskName != taskNameToDelete
+      return task.taskName !== taskNameToDelete
     }))
 
   }
@@ -47,12 +47,12 @@ const App: FC = () => {
       {/* separate two sections */}
       <div className='header'>
         <div className='inputContainer'>
-          <input type='text' name="task" value={task} onChange={handleOnChange} placeholder='Task..'></input>
-          <input type='number' name="deadline" value={deadline} onChange={handleOnChange} placeholder='Deadline (in Days)...'></input>
+          <input type='text' name="task" value={task} onChange={handleOnChange} placeholder='Task..' />
+          <input type='number' name="deadline" value={deadline} onChange={handleOnChange} placeholder='Deadline (in Days)...' />
         </div>
         <button className='button' onClick={clickToAddTask}>Add Task</button>
       </div>
-      <div className="todolist">
+      <div className="todoList">
         {todoList.map((task:ITask) => {
           return <TodoTask task={task} deleteTask={deleteTask}/>
         })}

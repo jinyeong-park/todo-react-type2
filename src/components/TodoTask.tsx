@@ -24,4 +24,4 @@ const TodoTask = ({ task, deleteTask }: Props) => {
 
 }
 
-export default TodoTask
+export default TodoTask;

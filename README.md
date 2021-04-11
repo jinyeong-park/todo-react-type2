@@ -11,8 +11,8 @@ The project requires npm and nodeJS installed
 ###  Build Project
 
 1. Install typescript: `yarn create react-app . --template typescript`
-refer [here](https://create-react-app.dev/docs/adding-typescript/)
-2. Install project dependencies: `npm install` or `yarn install`
+2. refer [here](https://create-react-app.dev/docs/adding-typescript/)
+3. Install project dependencies: `npm install` or `yarn install`
 
 ## Other resources
 | Source | Url |
