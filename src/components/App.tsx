@@ -7,23 +7,23 @@ const App: FC = () => {
   const [deadline, setDeadline] = useState<number>(0);
   const [todo, setTodoList] = useState([]);
 
-  const onChangeHandlerTask = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // console.log('typed', e.target.value)
-    setTask(e.target.value)
-  }
-
-  const onChangeHandlerDeadline = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // console.log('typed', e.target.value)
-    setDeadline(e.target.value)
-  }
+  // make it for two input onchange
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    // we should define types
+    if (event.target.name === "task") {
+      setTask(event.target.value)
+    } else {
+      setDeadline(Number(event.target.value))
+    }
+  };
 
   return (
     <div className="App">
       {/* separate two sections */}
       <div className='header'>
         <div className='inputContainer'>
-          <input type='text' value={task} onChange={onChangeHandlerTask} placeholder='Task..'></input>
-          <input type='number' value={deadline} onChange={onChangeHandlerDeadline} placeholder='Deadline (in Days)...'></input>
+          <input type='text' name="task" value={task} onChange={handleOnChange} placeholder='Task..'></input>
+          <input type='number' name="deadline" value={deadline} onChange={handleOnChange} placeholder='Deadline (in Days)...'></input>
         </div>
         <button className='button'>Add Task</button>
       </div>
