@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import '../App.css';
 
-function App() {
+const App: FC = () => {
   // create useState to save task
   const [task, setTask] = useState<string>("");
   const [deadline, setDeadline] = useState<number>(0);
+  const [todo, setTodoList] = useState([]);
 
   const onChangeHandlerTask = (e: React.ChangeEvent<HTMLInputElement>) => {
     // console.log('typed', e.target.value)
