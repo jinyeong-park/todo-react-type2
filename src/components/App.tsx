@@ -19,11 +19,18 @@ const App: FC = () => {
     }
   };
 
-  const handleOnClick = (event: React.MouseEvent): void => {
-    console.log(task, deadline)
+  const clickToAddTask = (event: React.MouseEvent): void => {
+    // console.log(task, deadline)
     event.preventDefault();
-    let updatedTodo = [...todoList, {task, deadline}]
-    setTodoList(updatedTodo)
+    let newTask = {taskName: task, deadline: deadline};
+    // surround array for previous todolist and newTask
+    // setTodoList(...todoList, newTask)
+    setTodoList([...todoList, newTask])
+    console.log(todoList)
+    // after update clear out the input
+    setTask("")
+    setDeadline(0)
+
 
   }
 
@@ -36,7 +43,7 @@ const App: FC = () => {
           <input type='text' name="task" value={task} onChange={handleOnChange} placeholder='Task..'></input>
           <input type='number' name="deadline" value={deadline} onChange={handleOnChange} placeholder='Deadline (in Days)...'></input>
         </div>
-        <button className='button' onClick={handleOnClick}>Add Task</button>
+        <button className='button' onClick={clickToAddTask}>Add Task</button>
       </div>
       <div className="todolist"></div>
     </div>
