@@ -1,11 +1,13 @@
 import React, { FC, useState } from 'react';
 import '../App.css';
+import { ITask } from './interface';
+
 
 const App: FC = () => {
   // create useState to save task
   const [task, setTask] = useState<string>("");
   const [deadline, setDeadline] = useState<number>(0);
-  const [todo, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState<ITask[]>([]);
 
   // make it for two input onchange
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -17,6 +19,15 @@ const App: FC = () => {
     }
   };
 
+  const handleOnClick = (event: React.MouseEvent): void => {
+    console.log(task, deadline)
+    event.preventDefault();
+    let updatedTodo = [...todoList, {task, deadline}]
+    setTodoList(updatedTodo)
+
+  }
+
+
   return (
     <div className="App">
       {/* separate two sections */}
@@ -25,7 +36,7 @@ const App: FC = () => {
           <input type='text' name="task" value={task} onChange={handleOnChange} placeholder='Task..'></input>
           <input type='number' name="deadline" value={deadline} onChange={handleOnChange} placeholder='Deadline (in Days)...'></input>
         </div>
-        <button className='button'>Add Task</button>
+        <button className='button' onClick={handleOnClick}>Add Task</button>
       </div>
       <div className="todolist"></div>
     </div>
