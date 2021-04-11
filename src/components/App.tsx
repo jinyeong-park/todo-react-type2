@@ -31,6 +31,14 @@ const App: FC = () => {
     setDeadline(0)
   }
 
+  const deleteTask = (taskNameToDelete: string): void => {
+    // filter the todolist and if the name is not the same as todelete, put it in the array
+    setTodoList(todoList.filter((task) => {
+      return task.taskName != taskNameToDelete
+    }))
+
+  }
+
 
   return (
     <div className="App">
