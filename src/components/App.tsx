@@ -43,7 +43,7 @@ const App: FC = () => {
         <button className='button' onClick={clickToAddTask}>Add Task</button>
       </div>
       <div className="todolist">
-        {todoList.map(() => {
+        {todoList.map((task:ITask) => {
           return <TodoTask />
         })}
       </div>

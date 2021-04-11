@@ -1,6 +1,11 @@
 import React from 'react';
+import { ITask } from './interface';
 
-const TodoTask = () => {
+interface Props {
+  task: ITask;
+}
+
+const TodoTask = ({ task }: Props) => {
   return (
     <div>
       task
