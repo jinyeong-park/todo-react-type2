@@ -4,9 +4,10 @@ import { ITask } from './interface';
 interface Props {
   // task?: ITask
   task: ITask;
+  deleteTask(): void;
 }
 
-const TodoTask = ({ task }: Props) => {
+const TodoTask = ({ task, deleteTask }: Props) => {
   return (
     <div className="task">
       <div className="content">
