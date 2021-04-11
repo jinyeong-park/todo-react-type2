@@ -24,6 +24,8 @@ const App: FC = () => {
     // console.log(task, deadline)
     event.preventDefault();
     let newTask = {taskName: task, deadline: deadline};
+    // only add when taskName is not empty
+    newTask.taskName.trim() !== "" &&
     // surround array for previous todolist and newTask
     setTodoList([...todoList, newTask])
     // after update clear out the input
