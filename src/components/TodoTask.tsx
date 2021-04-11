@@ -2,13 +2,14 @@ import React from 'react';
 import { ITask } from './interface';
 
 interface Props {
-  task?: ITask;
+  // task?: ITask
+  task: ITask;
 }
 
 const TodoTask = ({ task }: Props) => {
   return (
     <div>
-      task
+      {task.taskName} {task.deadline}
     </div>
   )
 
