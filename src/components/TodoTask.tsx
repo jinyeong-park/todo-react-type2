@@ -4,7 +4,7 @@ import { ITask } from './interface';
 interface Props {
   // task?: ITask
   task: ITask;
-  deleteTask(): void;
+  deleteTask(taskNameToDelete: string): void;
 }
 
 const TodoTask = ({ task, deleteTask }: Props) => {
@@ -13,7 +13,10 @@ const TodoTask = ({ task, deleteTask }: Props) => {
       <div className="content">
         <span>{task.taskName} </span>
         <span>{task.deadline} </span>
-        <button>X</button>
+        <button
+          onClick={() => {
+            deleteTask(task.taskName);
+          }}>X</button>
       </div>
     </div>
   )

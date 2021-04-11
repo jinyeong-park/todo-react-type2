@@ -52,7 +52,7 @@ const App: FC = () => {
       </div>
       <div className="todolist">
         {todoList.map((task:ITask) => {
-          return <TodoTask task={task}/>
+          return <TodoTask task={task} deleteTask={deleteTask}/>
         })}
       </div>
     </div>
