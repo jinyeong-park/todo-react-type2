@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import '../App.css';
 import { ITask } from './interface';
+import TodoTask from './TodoTask';
 
 
 const App: FC = () => {
@@ -24,14 +25,10 @@ const App: FC = () => {
     event.preventDefault();
     let newTask = {taskName: task, deadline: deadline};
     // surround array for previous todolist and newTask
-    // setTodoList(...todoList, newTask)
     setTodoList([...todoList, newTask])
-    console.log(todoList)
     // after update clear out the input
     setTask("")
     setDeadline(0)
-
-
   }
 
 
@@ -45,7 +42,11 @@ const App: FC = () => {
         </div>
         <button className='button' onClick={clickToAddTask}>Add Task</button>
       </div>
-      <div className="todolist"></div>
+      <div className="todolist">
+        {todoList.map(() => {
+          return <TodoTask />
+        })}
+      </div>
     </div>
   );
 }
